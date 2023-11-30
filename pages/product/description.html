@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        const productos = JSON.parse(localStorage.getItem('productos'))
+
+        const search = window.location.search;
+
+        const params = new URLSearchParams(search);
+        
+        // params.forEach((value, key) => {
+        //     console.log(key, value)
+        // })
+
+        const idParams = params.get('identificador');
+
+        console.log(idParams);
+
+        const producto = productos.find(productito => {
+            if (productito.id == idParams) {
+                return true;
+            }
+        })
+
+        document.write(producto.titulo)
+
+    </script>
+</body>
+</html>

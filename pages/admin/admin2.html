@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+
+  </head>
+
+<body>
+  <div class="container-lg">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#formModal">
+      Añadir
+    </button>
+
+    <div class="row">
+      <div class="col-12-col-md-6">
+
+
+      </div>
+      <div class="col-12-col-md-6">
+
+        <!--. Tabla -->
+        <div class="mb-3">
+          <label for="filtrar" class="form-label">Filtrar</label>
+          <input type="text" class="form-control" id="filtrar" placeholder="Nombre Producto">
+        </div>
+
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">imagen</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+
+            <!-- <tr>
+                      <th class="table-image">
+                        <img src="https://stylewatch.vtexassets.com/arquivos/ids/233580-800-800?v=638188815205330000&width=800&height=800&aspect=true" alt="">
+                      </th>
+                      <td class="table-title">PS5</td>
+                      <td class="table-descripcion">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, unde. Sapiente nulla numquam, sed itaque aspernatur hic exercitationem perspiciatis quod expedita facilis fuga sint animi molestiae facere repudiandae atque ut.</td>
+                      <td class="table-price">1000</td>
+                      <td class="table-category">Consolas</td>
+                    </tr> -->
+
+          </tbody>
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- .Formulario -->
+        <form id="formularioProducto">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cargar Nuevo Producto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+
+
+
+
+            <!--. Input -->
+            <div class="mb-3">
+              <label for="tituloProducto" class="form-label">Nombre Producto</label>
+              <input type="text" name="titulo" class="form-control" id="tituloProducto" placeholder="Playstation 4"
+                minlength="3" maxlength="70" required>
+            </div>
+
+            <!--. Input Precio -->
+            <!--* step permite trabajar con numeros enteros y 2 decimales-->
+            <div class="mb-3 d-flex gap-3">
+              <div class="w-100">
+                <label for="precioProducto" class="form-label">Precio</label>
+                <input type="number" name="precio" class="form-control" id="precioProducto" placeholder="10000" min="1"
+                  max="20000000" step=".01" required>
+              </div>
+              <!--. Input Categoria -->
+              <div class="w-100">
+                <label for="categoriaProducto" class="form-label">Categoria</label>
+                <select class="form-select" name="categoria" id="categoriaProducto" required>
+                  <option value=""></option>
+                  <option value="consolas">Consolas</option>
+                  <option value="juegos">Juegos</option>
+                  <option value="accesorios">Accesorios</option>
+                </select>
+              </div>
+            </div>
+
+            <!--. Input de la Imagen -->
+            <div class="mb-3">
+              <label for="imagenProducto" class="form-label">Nombre Producto</label>
+              <input type="url" name="imagen" class="form-control" id="imagenProducto"
+                placeholder="https://direccionImagen.com" minlength="3" maxlength="300" required>
+            </div>
+
+            <!--.Textarea-->
+            <div class="mb-3">
+              <label for="descripcionProducto" class="form-label">Descripcion del Producto</label>
+              <textarea class="form-control" name="descripcion" id="descripcionProducto" rows="3" minlength="8"
+                maxlength="400" placeholder="Descripcion del Producto" required></textarea>
+            </div>
+
+            
+
+
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Agregar Producto</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="/js/admin.js"></script> -->
+  <!-- <script src="/js/storage.js"></script> -->
+  <script src="/js/home.js"></script>
+</body>
+
+</html>
